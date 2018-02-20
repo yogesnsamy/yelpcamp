@@ -9,6 +9,8 @@ router.get("/new",middleware.isLoggedIn,function(req,res){
 	Campground.findById(req.params.id,function(err,campground){
 		if(err){
 			console.log(err);
+			req.flash("error", err);
+			res.redirect("/campgrounds");
 		}
 		else{
 			res.render("comments/new",{campground:campground});		

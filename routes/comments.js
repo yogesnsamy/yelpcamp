@@ -13,7 +13,9 @@ router.get("/new",middleware.isLoggedIn,function(req,res){
 			res.redirect("/campgrounds");
 		}
 		else{
-			res.render("/comments/new",{campground:campground});		
+			console.log("");
+			//res.render("comments/new",{campground:campground});		
+			res.render("comments/new",{campground:"campground"});		
 		}
 	})
 

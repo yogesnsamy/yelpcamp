@@ -14,8 +14,8 @@ router.get("/new",middleware.isLoggedIn,function(req,res){
 		}
 		else{
 			console.log("");
-			//res.render("comments/new",{campground:campground});		
-			res.render("comments/new",{campground:"campground"});		
+			res.render("comments/new",{campground:campground});		
+		//	res.render("comments/new",{campground:"campground"});		
 		}
 	})
 

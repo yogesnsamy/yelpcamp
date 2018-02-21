@@ -49,14 +49,25 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-var port = process.env.PORT || 3000;
+//var port = process.env.PORT || 3000;
 var ipaddress = process.env.IP || "127.0.0.1";
+
+// --------------
+const port = 3000;
+const PORT = process.env.PORT || port;
+const HOST = process.env.BASE_URL || 'localhost';
+//const baseUrl = `http://${HOST}:${PORT}`;
+
+console.log("process.env.PORT: " + process.env.PORT);
+
+//server.set('port', process.env.PORT);
+
+//---------------
 console.log("url: " + url);
-console.log("port: "+port);
+console.log("PORT: "+PORT);
 console.log("ipaddress: "+ipaddress);
-//app.listen(process.env.PORT, process.env.IP, function(){
-    app.listen(port, ipaddress, function(){
+app.listen(process.env.PORT, process.env.IP, function(){
+//    app.listen(port, function(){
    console.log("The YelpCamp Server Has Started!");
 });
 
-''

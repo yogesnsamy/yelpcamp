@@ -1,23 +1,25 @@
 var express 			= require("express"),
-	app 						= express(),
+	app 				= express(),
 	bodyParser 			= require("body-parser"),
-	mongoose 				= require("mongoose"),
-	methodOverride	=	require("method-override"),
-	flash						= require("connect-flash"),
-	passport				= require("passport"),
-	LocalStrategy		=	require("passport-local"),
+	mongoose 			= require("mongoose"),
+	methodOverride  	= require("method-override"),
+	flash				= require("connect-flash"),
+	passport			= require("passport"),
+	LocalStrategy		= require("passport-local"),
 	Campground 			= require("./models/campground"),
-	Comment					= require("./models/comment"),
-	User						= require("./models/user"),
-	seedDB					= require("./seeds"); //to initialize the db
+	Comment				= require("./models/comment"),
+	User				= require("./models/user"),
+	seedDB				= require("./seeds"); //to initialize the db
 
-var commentRoutes 		= require("./routes/comments"),
+var commentRoutes 		    = require("./routes/comments"),
 		campgroundRoutes 	= require("./routes/campgrounds"),
-		indexRoutes 			=	require("./routes/index");
+		indexRoutes 		= require("./routes/index");
 
 //mongoose.connect("mongodb://localhost/yelp_camp",{useMongoClient:true});
 // mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb://cicak:cicak@ds141028.mlab.com:41028/yelpcampcicak");
+var dbURL = process.env.DATABASEURL || "mongodb://localhost/yelp_camp";
+//mongoose.connect("mongodb://cicak:cicak@ds141028.mlab.com:41028/yelpcampcicak");
+mongoose.connect(dbURL);
 
 // app.use(bodyParser.urlencoded({extended: true}));
 // app.use(express.static(__dirname+"/public"));

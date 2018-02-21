@@ -68,10 +68,13 @@ app.use("/",indexRoutes);
 app.use("/campgrounds",campgroundRoutes);
 app.use("/campgrounds/:id/comments",commentRoutes);
 
+var port = process.env.PORT || 3000;
+var ip = process.env.IP || "127.0.0.1";
 
-//app.listen(process.env.PORT, process.env.IP, function(){
-    app.listen(process.env.PORT, function(){
+// app.listen(process.env.PORT, process.env.IP, function(){
+//    app.listen(process.env.PORT, function(){
 //	app.listen(3000,function(){
+    app.listen(port,ip,function(){
     console.log("connected");
     console.log(process.env.IP);
 })

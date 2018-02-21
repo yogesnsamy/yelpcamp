@@ -74,9 +74,9 @@ var ip = process.env.IP || "127.0.0.1";
 // app.listen(process.env.PORT, process.env.IP, function(){
 //    app.listen(process.env.PORT, function(){
 //	app.listen(3000,function(){
-    app.listen(port,ip,function(){
+    app.listen(port,function(){
     console.log("connected");
-    console.log(process.env.IP);
+    console.log(ip);
 })
 
 //middleware function

@@ -68,6 +68,7 @@ console.log("PORT: "+PORT);
 console.log("ipaddress: "+ipaddress);
 app.listen(process.env.PORT, process.env.IP, function(){
 //    app.listen(port, function(){
+    console.log("process.env.IP 2: "+process.env.IP)
    console.log("The YelpCamp Server Has Started!");
 });
 
